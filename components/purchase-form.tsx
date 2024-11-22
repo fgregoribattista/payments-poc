@@ -1,24 +1,24 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+  SelectValue
+} from '@/components/ui/select'
 
 interface PurchaseFormProps {
-  type: "fiat" | "crypto"
+  type: 'fiat' | 'crypto'
 }
 
 export function PurchaseForm({ type }: PurchaseFormProps) {
-  const [amount, setAmount] = useState("")
-  const [currency, setCurrency] = useState("")
+  const [amount, setAmount] = useState('')
+  const [currency, setCurrency] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,9 +26,10 @@ export function PurchaseForm({ type }: PurchaseFormProps) {
     // Here you would typically send this data to your backend
   }
 
-  const currencies = type === "fiat" 
-    ? ["USD", "EUR", "GBP", "JPY"] 
-    : ["BTC", "ETH", "XRP", "LTC"]
+  const currencies =
+    type === 'fiat'
+      ? ['USD', 'EUR', 'GBP', 'JPY']
+      : ['BTC', 'ETH', 'XRP', 'LTC']
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -64,4 +65,3 @@ export function PurchaseForm({ type }: PurchaseFormProps) {
     </form>
   )
 }
-

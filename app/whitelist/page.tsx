@@ -1,30 +1,30 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "../../hooks/use-toast"
-import { ToastAction } from "@/components/ui/toast"
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
+import { toast } from '../../hooks/use-toast'
+import { ToastAction } from '@/components/ui/toast'
 
 export default function WhitelistPage() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [reason, setReason] = useState("")
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [reason, setReason] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Whitelist application submitted:", { name, email, reason })
+    console.log('Whitelist application submitted:', { name, email, reason })
     // Here you would typically send this data to your backend
     toast({
-      title: "Application submitted!",
+      title: 'Application submitted!',
       description: "We'll review your application and get back to you soon.",
-      action: <ToastAction altText="Dismiss">Dismiss</ToastAction>,
+      action: <ToastAction altText="Dismiss">Dismiss</ToastAction>
     })
-    setName("")
-    setEmail("")
-    setReason("")
+    setName('')
+    setEmail('')
+    setReason('')
   }
 
   return (
@@ -59,9 +59,10 @@ export default function WhitelistPage() {
             required
           />
         </div>
-        <Button type="submit" className="w-full">Submit Application</Button>
+        <Button type="submit" className="w-full">
+          Submit Application
+        </Button>
       </form>
     </div>
   )
 }
-

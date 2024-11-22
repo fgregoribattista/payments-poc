@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --check \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-path .gitignore",
+    "prettier:fix": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-pattern node_modules/"
   },
   "dependencies": {
+    "@moonpay/moonpay-react": "^1.8.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.2",
@@ -20,6 +24,7 @@
     "lucide-react": "^0.460.0",
     "next": "14.2.16",
     "next-themes": "^0.4.3",
+    "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.4",
