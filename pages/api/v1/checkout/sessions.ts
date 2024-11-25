@@ -1,3 +1,4 @@
+import { STRIPE_CALL_BACK_URL } from '@/config/constant'
 import { NextApiRequest, NextApiResponse } from 'next'
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const stripe = require('stripe')(
@@ -25,8 +26,7 @@ export default async function handler(
         ],
         mode: 'payment',
         ui_mode: 'embedded',
-        return_url:
-          'http://localhost:3000/api/v1/checkout/sessions?session_id={CHECKOUT_SESSION_ID}'
+        return_url: STRIPE_CALL_BACK_URL
       })
 
       res.status(200).json({ clientSecret: session.client_secret })

@@ -5,6 +5,7 @@ import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout
 } from '@stripe/react-stripe-js'
+import { STRIPE_SESSION_URL } from '@/config/constant'
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -16,7 +17,7 @@ const stripePromise = loadStripe(
 export default function StripePayments() {
   const fetchClientSecret = useCallback(() => {
     // Create a Checkout Session
-    return fetch('http://localhost:3000/api/v1/checkout/sessions', {
+    return fetch(STRIPE_SESSION_URL, {
       method: 'POST'
     })
       .then((res) => res.json())

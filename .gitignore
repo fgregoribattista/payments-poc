@@ -38,3 +38,6 @@ next-env.d.ts
 #tests
 /w3a-quick-start/
 /base-examples/
+
+#env files
+.env
